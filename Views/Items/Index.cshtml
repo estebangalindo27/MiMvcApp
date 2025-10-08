@@ -1,0 +1,17 @@
+@model IEnumerable<MiMvcApp.Models.Item>
+@{
+    Layout = "_Layout";
+}
+<h2>Items</h2>
+<p><a asp-action="Create">Crear nuevo</a></p>
+<table>
+<thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+<tbody>
+@foreach (var it in Model) {
+<tr><td>@it.Name</td><td>@it.Description</td></tr>
+}
+</tbody>
+</table>
+<form method="post" asp-controller="Account" asp-action="Logout">
+    <button type="submit">Cerrar sesión</button>
+</form>
